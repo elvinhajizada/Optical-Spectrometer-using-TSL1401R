@@ -1,0 +1,21 @@
+V3 9
+FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" 2016/07/18.17:20:40 P.20131013
+EN work/Main 1468851644 FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/MyTypes 1468851643
+AR work/Main/Behavioral 1468851645 \
+      FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" EN work/Main 1468851644
+FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" 2016/06/15.10:00:28 P.20131013
+PH work/MyTypes 1468851642 \
+      FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" \
+      PB ieee/std_logic_1164 1381692176
+PB work/MyTypes 1468851643 \
+      FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" PH work/MyTypes 1468851642
+FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Serail_tx.vhd" 2016/06/13.13:10:45 P.20131013
+EN work/serial_tx 1465814416 \
+      FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Serail_tx.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/MyTypes 1468851643
+AR work/serial_tx/Behavioral 1465814417 \
+      FL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Serail_tx.vhd" \
+      EN work/serial_tx 1465814416

@@ -1,0 +1,6 @@
+PB mytypes mytypes "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" sub00/vhpl03 1468851643
+AR serial_tx behavioral "D:/Projects/Xilinx ISE Projects/Taos_demo2/Serail_tx.vhd" sub00/vhpl05 1465814417
+EN serial_tx NULL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Serail_tx.vhd" sub00/vhpl04 1465814416
+AR main behavioral "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" sub00/vhpl01 1468851645
+PH mytypes NULL "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" sub00/vhpl02 1468851642
+EN main NULL "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" sub00/vhpl00 1468851644

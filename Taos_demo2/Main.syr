@@ -1,0 +1,684 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: Main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : Main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/Projects/Xilinx ISE Projects/Taos_demo2/MyTypes.vhd" in Library work.
+Architecture mytypes of Entity mytypes is up to date.
+Compiling vhdl file "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Main> in library <work> (architecture <behavioral>) with generics.
+	MCLK_CYCLE = 3124
+	SCLK_CYCLE = 1
+	WAIT_CYCLE = 6
+	inc = 151
+	nofData = 128
+	nofTest = 12
+	pow = 16
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Main> in library <work> (Architecture <behavioral>).
+	MCLK_CYCLE = 3124
+	SCLK_CYCLE = 1
+	WAIT_CYCLE = 6
+	inc = 151
+	nofData = 128
+	nofTest = 12
+	pow = 16
+INFO:Xst:1433 - Contents of array <datain> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <datain> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <datain> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <datain> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Entity <Main> analyzed. Unit <Main> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Main>.
+    Related source file is "D:/Projects/Xilinx ISE Projects/Taos_demo2/Main.vhd".
+WARNING:Xst:653 - Signal <treshold> is used but never assigned. This sourceless signal will be automatically connected to value 00010100.
+WARNING:Xst:1780 - Signal <mclk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <din0_shift_reg<15>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_0<3:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 128x8-bit dual-port RAM <Mram_datain> for signal <datain>.
+    Found 128x8-bit single-port RAM <Mram_datain_ren> for signal <datain>.
+    Register <clock_state> equivalent to <ADC_SCLK> has been removed
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 11                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk_baud                  (rising_edge)        |
+    | Reset              | state$and0000             (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | start                                          |
+    | Power Up State     | start                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <ADC_CS>.
+    Found 1-bit register for signal <ADC_SCLK>.
+    Found 1-bit register for signal <SI>.
+    Found 17-bit register for signal <acc>.
+    Found 17-bit adder for signal <acc$add0000> created at line 289.
+    Found 8-bit register for signal <buff_in>.
+    Found 4-bit register for signal <ce_sr>.
+    Found 1-bit register for signal <clk1MHz>.
+    Found 1-bit register for signal <clock_enable>.
+    Found 13-bit up counter for signal <cntData>.
+    Found 20-bit up counter for signal <count>.
+    Found 8-bit up counter for signal <count2>.
+    Found 8-bit register for signal <count3>.
+    Found 8-bit adder for signal <count3$addsub0000> created at line 259.
+    Found 3-bit up counter for signal <counter>.
+    Found 12-bit register for signal <data_0>.
+    Found 16-bit register for signal <din0_shift_reg>.
+    Found 1-bit register for signal <finished>.
+    Found 1-bit register for signal <flag>.
+    Found 8-bit up counter for signal <indData>.
+    Found 13-bit adder for signal <indData$add0000> created at line 318.
+    Found 8-bit up counter for signal <index>.
+    Found 1-bit register for signal <mode_lock>.
+    Found 7-bit comparator less for signal <mode_lock$cmp_lt0000> created at line 179.
+    Found 7-bit up counter for signal <mode_lock_pixel>.
+    Found 8-bit comparator lessequal for signal <mode_lock_pixel$cmp_le0000> created at line 164.
+    Found 1-bit register for signal <sample_enable>.
+    Found 19-bit register for signal <sequncer_shift_reg>.
+    Found 3-bit adder for signal <state$add0000> created at line 362.
+    Found 1-bit register for signal <tmp_txd>.
+    Found 15-bit up accumulator for signal <total>.
+    Found 1-bit register for signal <tx_enable>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 RAM(s).
+	inferred   7 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred  95 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <Main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 128x8-bit dual-port RAM                               : 1
+ 128x8-bit single-port RAM                             : 1
+# Adders/Subtractors                                   : 4
+ 13-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 13-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+ 8-bit up counter                                      : 3
+# Registers                                            : 18
+ 1-bit register                                        : 11
+ 12-bit register                                       : 1
+ 16-bit register                                       : 1
+ 17-bit register                                       : 1
+ 19-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 2
+ 7-bit comparator less                                 : 1
+ 8-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ start | 0000000001
+ s1    | 0000000010
+ s2    | 0000000100
+ s3    | 0000001000
+ s4    | 0000010000
+ s5    | 0000100000
+ s6    | 0001000000
+ s7    | 0010000000
+ s8    | 0100000000
+ stop  | 1000000000
+---------------------
+WARNING:Xst:2677 - Node <din0_shift_reg_12> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_3> of sequential type is unconnected in block <Main>.
+
+Synthesizing (advanced) Unit <Main>.
+INFO:Xst:3226 - The RAM <Mram_datain> will be implemented as a BLOCK RAM, absorbing the following register(s): <buff_in>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <led<6>_0>      | high     |
+    |     addrA          | connected to signal <index>         |          |
+    |     diA            | connected to signal <data_0>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <buff_in_not0001> | high     |
+    |     addrB          | connected to signal <indData>       |          |
+    |     doB            | connected to signal <buff_in>       |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_datain_ren> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <led<6>_1>      | high     |
+    |     addrA          | connected to signal <index>         |          |
+    |     diA            | connected to signal <data_0>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <Main> synthesized (advanced).
+WARNING:Xst:2677 - Node <din0_shift_reg_12> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <din0_shift_reg_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <data_0_3> of sequential type is unconnected in block <Main>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 2
+ 128x8-bit dual-port block RAM                         : 1
+ 128x8-bit single-port distributed RAM                 : 1
+# Adders/Subtractors                                   : 4
+ 13-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 13-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+ 8-bit up counter                                      : 3
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+# Comparators                                          : 2
+ 7-bit comparator less                                 : 1
+ 8-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 15.
+
+Final Macro Processing ...
+
+Processing Unit <Main> :
+	Found 5-bit shift register for signal <din0_shift_reg_4>.
+Unit <Main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 151
+ Flip-Flops                                            : 151
+# Shift Registers                                      : 1
+ 5-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Main.ngr
+Top Level Output File Name         : Main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 399
+#      GND                         : 1
+#      INV                         : 15
+#      LUT1                        : 75
+#      LUT2                        : 23
+#      LUT2_L                      : 3
+#      LUT3                        : 31
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 57
+#      LUT4_D                      : 3
+#      LUT4_L                      : 3
+#      MUXCY                       : 90
+#      MUXF5                       : 9
+#      VCC                         : 1
+#      XORCY                       : 86
+# FlipFlops/Latches                : 152
+#      FD                          : 12
+#      FDE                         : 39
+#      FDR                         : 23
+#      FDRE                        : 62
+#      FDRSE                       : 1
+#      FDS                         : 14
+#      FDSE                        : 1
+# RAMS                             : 33
+#      RAM32X1S                    : 32
+#      RAMB16_S9_S9                : 1
+# Shift Registers                  : 1
+#      SRL16E                      : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 2
+#      OBUF                        : 14
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                      147  out of    960    15%  
+ Number of Slice Flip Flops:            152  out of   1920     7%  
+ Number of 4 input LUTs:                277  out of   1920    14%  
+    Number used as logic:               212
+    Number used as Shift registers:       1
+    Number used as RAMs:                 64
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of     83    20%  
+ Number of BRAMs:                         1  out of      4    25%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 162   |
+clk1MHz                            | NONE(SI)               | 10    |
+acc_16                             | NONE(tmp_txd)          | 14    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.581ns (Maximum Frequency: 131.904MHz)
+   Minimum input arrival time before clock: 5.077ns
+   Maximum output required time after clock: 4.754ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.581ns (frequency: 131.904MHz)
+  Total number of paths / destination ports: 6118 / 557
+-------------------------------------------------------------------------
+Delay:               7.581ns (Levels of Logic = 5)
+  Source:            cntData_9 (FF)
+  Destination:       cntData_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: cntData_9 to cntData_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.514   0.603  cntData_9 (cntData_9)
+     LUT4:I0->O            1   0.612   0.387  flag_cmp_eq000159_SW0 (N17)
+     LUT4:I2->O           17   0.612   0.923  flag_cmp_eq000159 (cntData_not0001_inv)
+     LUT3:I2->O            1   0.612   0.360  cntData_cmp_eq00005_SW0 (N15)
+     LUT4_L:I3->LO         1   0.612   0.103  cntData_cmp_eq000053_SW0 (N13)
+     LUT4:I3->O           13   0.612   0.836  cntData_or0000 (cntData_or0000)
+     FDRE:R                    0.795          cntData_0
+    ----------------------------------------
+    Total                      7.581ns (4.369ns logic, 3.212ns route)
+                                       (57.6% logic, 42.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk1MHz'
+  Clock period: 4.518ns (frequency: 221.315MHz)
+  Total number of paths / destination ports: 138 / 11
+-------------------------------------------------------------------------
+Delay:               4.518ns (Levels of Logic = 3)
+  Source:            count3_3 (FF)
+  Destination:       count3_2 (FF)
+  Source Clock:      clk1MHz rising
+  Destination Clock: clk1MHz rising
+
+  Data Path: count3_3 to count3_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               7   0.514   0.754  count3_3 (count3_3)
+     LUT4:I0->O            1   0.612   0.426  count3_mux0003<0>1_SW1 (N9)
+     LUT4:I1->O            6   0.612   0.721  count3_mux0003<0>1 (N0)
+     LUT4:I0->O            1   0.612   0.000  count3_mux0003<4> (count3_mux0003<4>)
+     FD:D                      0.268          count3_3
+    ----------------------------------------
+    Total                      4.518ns (2.618ns logic, 1.900ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'acc_16'
+  Clock period: 4.239ns (frequency: 235.885MHz)
+  Total number of paths / destination ports: 54 / 21
+-------------------------------------------------------------------------
+Delay:               4.239ns (Levels of Logic = 3)
+  Source:            state_FSM_FFd8 (FF)
+  Destination:       tmp_txd (FF)
+  Source Clock:      acc_16 rising
+  Destination Clock: acc_16 rising
+
+  Data Path: state_FSM_FFd8 to tmp_txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.514   0.603  state_FSM_FFd8 (state_FSM_FFd8)
+     LUT4:I0->O            1   0.612   0.509  tmp_txd_mux00024 (tmp_txd_mux00024)
+     LUT4:I0->O            1   0.612   0.509  tmp_txd_mux000236 (tmp_txd_mux000236)
+     LUT3:I0->O            1   0.612   0.000  tmp_txd_mux000291 (tmp_txd_mux0002)
+     FDS:D                     0.268          tmp_txd
+    ----------------------------------------
+    Total                      4.239ns (2.618ns logic, 1.621ns route)
+                                       (61.8% logic, 38.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 24 / 24
+-------------------------------------------------------------------------
+Offset:              5.077ns (Levels of Logic = 3)
+  Source:            tx_start (PAD)
+  Destination:       cntData_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: tx_start to cntData_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.106   0.607  tx_start_IBUF (tx_start_IBUF)
+     LUT2:I1->O            1   0.612   0.509  cntData_or0000_SW0 (N11)
+     LUT4:I0->O           13   0.612   0.836  cntData_or0000 (cntData_or0000)
+     FDRE:R                    0.795          cntData_0
+    ----------------------------------------
+    Total                      5.077ns (3.125ns logic, 1.952ns route)
+                                       (61.6% logic, 38.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'acc_16'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              4.020ns (Levels of Logic = 2)
+  Source:            tx_start (PAD)
+  Destination:       tmp_txd (FF)
+  Destination Clock: acc_16 rising
+
+  Data Path: tx_start to tmp_txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.106   0.690  tx_start_IBUF (tx_start_IBUF)
+     LUT2:I0->O           12   0.612   0.817  state_FSM_Scst_FSM_inv1 (state_FSM_Scst_FSM_inv)
+     FDR:R                     0.795          state_FSM_FFd2
+    ----------------------------------------
+    Total                      4.020ns (2.513ns logic, 1.507ns route)
+                                       (62.5% logic, 37.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              4.754ns (Levels of Logic = 1)
+  Source:            tx_enable (FF)
+  Destination:       led<5> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: tx_enable to led<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            26   0.514   1.071  tx_enable (tx_enable)
+     OBUF:I->O                 3.169          led_5_OBUF (led<5>)
+    ----------------------------------------
+    Total                      4.754ns (3.683ns logic, 1.071ns route)
+                                       (77.5% logic, 22.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'acc_16'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 1)
+  Source:            tmp_txd (FF)
+  Destination:       txd (PAD)
+  Source Clock:      acc_16 rising
+
+  Data Path: tmp_txd to txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.514   0.357  tmp_txd (tmp_txd)
+     OBUF:I->O                 3.169          txd_OBUF (txd)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1MHz'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.252ns (Levels of Logic = 1)
+  Source:            sample_enable (FF)
+  Destination:       led<6> (PAD)
+  Source Clock:      clk1MHz rising
+
+  Data Path: sample_enable to led<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             6   0.514   0.569  sample_enable (sample_enable)
+     OBUF:I->O                 3.169          led_6_OBUF (led<6>)
+    ----------------------------------------
+    Total                      4.252ns (3.683ns logic, 0.569ns route)
+                                       (86.6% logic, 13.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.78 secs
+ 
+--> 
+
+Total memory usage is 266044 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

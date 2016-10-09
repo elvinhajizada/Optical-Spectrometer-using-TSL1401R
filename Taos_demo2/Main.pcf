@@ -1,0 +1,96 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jul 18 17:20:56 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ADC_SCLK" LOCATE = SITE "J3" LEVEL 1;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "txd" LOCATE = SITE "A9" LEVEL 1;
+COMP "ADC_D0" LOCATE = SITE "A3" LEVEL 1;
+COMP "SI" LOCATE = SITE "C6" LEVEL 1;
+COMP "led<0>" LOCATE = SITE "M5" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "M11" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "P7" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "P6" LEVEL 1;
+COMP "led<4>" LOCATE = SITE "N5" LEVEL 1;
+COMP "led<5>" LOCATE = SITE "N4" LEVEL 1;
+COMP "led<6>" LOCATE = SITE "P4" LEVEL 1;
+COMP "led<7>" LOCATE = SITE "G1" LEVEL 1;
+COMP "modelock" LOCATE = SITE "D12" LEVEL 1;
+COMP "taos_clk" LOCATE = SITE "B6" LEVEL 1;
+COMP "tx_start" LOCATE = SITE "N3" LEVEL 1;
+COMP "ADC_CS" LOCATE = SITE "B2" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+PIN Mram_datain.A_pins<12> = BEL "Mram_datain.A" PINNAME CLKA;
+PIN Mram_datain.B_pins<12> = BEL "Mram_datain.B" PINNAME CLKB;
+TIMEGRP clock = BEL "flag" BEL "din0_shift_reg_5" BEL "din0_shift_reg_6" BEL
+        "din0_shift_reg_7" BEL "din0_shift_reg_8" BEL "din0_shift_reg_9" BEL
+        "din0_shift_reg_10" BEL "din0_shift_reg_11" BEL "clock_enable" BEL
+        "sequncer_shift_reg_0" BEL "sequncer_shift_reg_1" BEL
+        "sequncer_shift_reg_2" BEL "sequncer_shift_reg_3" BEL
+        "sequncer_shift_reg_4" BEL "sequncer_shift_reg_5" BEL
+        "sequncer_shift_reg_6" BEL "sequncer_shift_reg_7" BEL
+        "sequncer_shift_reg_8" BEL "sequncer_shift_reg_9" BEL
+        "sequncer_shift_reg_10" BEL "sequncer_shift_reg_11" BEL
+        "sequncer_shift_reg_12" BEL "sequncer_shift_reg_13" BEL
+        "sequncer_shift_reg_14" BEL "sequncer_shift_reg_15" BEL
+        "sequncer_shift_reg_16" BEL "sequncer_shift_reg_17" BEL
+        "sequncer_shift_reg_18" BEL "clk1MHz" BEL "mode_lock" BEL "tx_enable"
+        BEL "finished" BEL "ce_sr_0" BEL "ce_sr_1" BEL "ce_sr_2" BEL "ce_sr_3"
+        BEL "ADC_CS" BEL "data_0_4" BEL "data_0_5" BEL "data_0_6" BEL
+        "data_0_7" BEL "data_0_8" BEL "data_0_9" BEL "data_0_10" BEL
+        "data_0_11" BEL "ADC_SCLK" BEL "count_0" BEL "count_1" BEL "count_2"
+        BEL "count_3" BEL "count_4" BEL "count_5" BEL "count_6" BEL "count_7"
+        BEL "count_8" BEL "count_9" BEL "count_10" BEL "count_11" BEL
+        "count_12" BEL "count_13" BEL "count_14" BEL "count_15" BEL "count_16"
+        BEL "count_17" BEL "count_18" BEL "count_19" BEL "count2_0" BEL
+        "count2_1" BEL "count2_2" BEL "count2_3" BEL "count2_4" BEL "count2_5"
+        BEL "count2_6" BEL "count2_7" BEL "indData_0" BEL "indData_1" BEL
+        "indData_2" BEL "indData_3" BEL "indData_4" BEL "indData_5" BEL
+        "indData_6" BEL "indData_7" BEL "cntData_0" BEL "cntData_1" BEL
+        "cntData_2" BEL "cntData_3" BEL "cntData_4" BEL "cntData_5" BEL
+        "cntData_6" BEL "cntData_7" BEL "cntData_8" BEL "cntData_9" BEL
+        "cntData_10" BEL "cntData_11" BEL "cntData_12" BEL "index_0" BEL
+        "index_1" BEL "index_2" BEL "index_3" BEL "index_4" BEL "index_5" BEL
+        "index_6" BEL "index_7" BEL "mode_lock_pixel_0" BEL
+        "mode_lock_pixel_1" BEL "mode_lock_pixel_2" BEL "mode_lock_pixel_3"
+        BEL "mode_lock_pixel_4" BEL "mode_lock_pixel_5" BEL
+        "mode_lock_pixel_6" BEL "acc_0" BEL "acc_1" BEL "acc_2" BEL "acc_3"
+        BEL "acc_4" BEL "acc_5" BEL "acc_6" BEL "acc_7" BEL "acc_8" BEL
+        "acc_9" BEL "acc_10" BEL "acc_11" BEL "acc_12" BEL "acc_13" BEL
+        "acc_14" BEL "acc_15" BEL "acc_16" PIN "Mram_datain.A_pins<12>" PIN
+        "Mram_datain.B_pins<12>" BEL "Mshreg_din0_shift_reg_4" BEL
+        "din0_shift_reg_4" BEL "Mram_datain_ren1/G" BEL "Mram_datain_ren1/F"
+        BEL "Mram_datain_ren2/G" BEL "Mram_datain_ren2/F" BEL
+        "Mram_datain_ren3/G" BEL "Mram_datain_ren3/F" BEL "Mram_datain_ren4/G"
+        BEL "Mram_datain_ren4/F" BEL "Mram_datain_ren5/G" BEL
+        "Mram_datain_ren5/F" BEL "Mram_datain_ren6/G" BEL "Mram_datain_ren6/F"
+        BEL "Mram_datain_ren7/G" BEL "Mram_datain_ren7/F" BEL
+        "Mram_datain_ren8/G" BEL "Mram_datain_ren8/F" BEL
+        "Mram_datain_ren11/G" BEL "Mram_datain_ren11/F" BEL
+        "Mram_datain_ren9/G" BEL "Mram_datain_ren9/F" BEL
+        "Mram_datain_ren10/G" BEL "Mram_datain_ren10/F" BEL
+        "Mram_datain_ren12/G" BEL "Mram_datain_ren12/F" BEL
+        "Mram_datain_ren13/G" BEL "Mram_datain_ren13/F" BEL
+        "Mram_datain_ren14/G" BEL "Mram_datain_ren14/F" BEL
+        "Mram_datain_ren15/G" BEL "Mram_datain_ren15/F" BEL
+        "Mram_datain_ren16/G" BEL "Mram_datain_ren16/F" BEL
+        "Mram_datain_ren17/G" BEL "Mram_datain_ren17/F" BEL
+        "Mram_datain_ren18/G" BEL "Mram_datain_ren18/F" BEL
+        "Mram_datain_ren19/G" BEL "Mram_datain_ren19/F" BEL
+        "Mram_datain_ren20/G" BEL "Mram_datain_ren20/F" BEL
+        "Mram_datain_ren21/G" BEL "Mram_datain_ren21/F" BEL
+        "Mram_datain_ren22/G" BEL "Mram_datain_ren22/F" BEL
+        "Mram_datain_ren23/G" BEL "Mram_datain_ren23/F" BEL
+        "Mram_datain_ren24/G" BEL "Mram_datain_ren24/F" BEL
+        "Mram_datain_ren25/G" BEL "Mram_datain_ren25/F" BEL
+        "Mram_datain_ren26/G" BEL "Mram_datain_ren26/F" BEL
+        "Mram_datain_ren27/G" BEL "Mram_datain_ren27/F" BEL
+        "Mram_datain_ren28/G" BEL "Mram_datain_ren28/F" BEL
+        "Mram_datain_ren29/G" BEL "Mram_datain_ren29/F" BEL
+        "Mram_datain_ren30/G" BEL "Mram_datain_ren30/F" BEL
+        "Mram_datain_ren31/G" BEL "Mram_datain_ren31/F" BEL
+        "Mram_datain_ren32/G" BEL "Mram_datain_ren32/F" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+SCHEMATIC END;
+
